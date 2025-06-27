@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Jupyter Book Template</title>
+    <title>Introduction &#8212; InfoVisA4</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -143,14 +143,14 @@
     
   
 
-<a class="navbar-brand logo" href="docs/home.html">
+<a class="navbar-brand logo" href="#">
   
   
   
   
   
   
-    <p class="title logo__title">Jupyter Book Template</p>
+    <p class="title logo__title">InfoVisA4</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -168,16 +168,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="docs/home.html">
-                    Jupyter Book Tutorial
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introduction
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="docs/notebook.html">Example Notebook</a></li>
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -230,19 +227,37 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/index.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/Mark-Kuster-UvA/InfoVisA4/main?urlpath=tree/index.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">Colab</span>
+<span class="btn__text-container">Binder</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -261,7 +276,7 @@
       
       
       
-      <li><a href="https://github.com/yenchiah/jupyter-book-template" target="_blank"
+      <li><a href="https://github.com/Mark-Kuster-UvA/InfoVisA4" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +293,7 @@
       
       
       
-      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Mark-Kuster-UvA/InfoVisA4/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -568,58 +583,71 @@ housing options. Alternative housing such as tiny houses might also be the new f
 <p>The color coding by age group helps visually distinguish trends.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 
-<span class="n">lti_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Inkomen_LTI_Gecombineerd.csv&#39;</span><span class="p">)</span>
+<span class="c1"># CSV&#39;s inladen</span>
+<span class="n">lti_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;LTI_per_Leeftijdsgroep.csv&#39;</span><span class="p">)</span>
+<span class="n">inkomen_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;inkomen_huishoudens_per_leeftijd.csv&#39;</span><span class="p">)</span>
 
-<span class="n">age_group_translation</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Hoofdkostwinner: tot 25 jaar&#39;</span><span class="p">:</span> <span class="s1">&#39;Primary earner: under 25&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Hoofdkostwinner: 25 tot 35 jaar&#39;</span><span class="p">:</span> <span class="s1">&#39;Primary earner: 25-35&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Hoofdkostwinner: 35 tot 45 jaar&#39;</span><span class="p">:</span> <span class="s1">&#39;Primary earner: 35-45&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Hoofdkostwinner: 45 tot 65 jaar&#39;</span><span class="p">:</span> <span class="s1">&#39;Primary earner: 45-65&#39;</span>
-<span class="p">}</span>
+<span class="n">inkomen_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">inkomen_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">inkomen_clean</span> <span class="o">=</span> <span class="n">inkomen_df</span><span class="p">[[</span><span class="s1">&#39;Overige kenmerken&#39;</span><span class="p">,</span> <span class="s1">&#39;Bruto-inkomen (1 000 euro)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">inkomen_clean</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">,</span> <span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">]</span>
+<span class="n">inkomen_clean</span><span class="p">[</span><span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inkomen_clean</span><span class="p">[</span><span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
 
-<span class="n">viz_data</span> <span class="o">=</span> <span class="n">lti_merged</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">viz_data</span><span class="p">[</span><span class="s1">&#39;Age Group EN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">viz_data</span><span class="p">[</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">age_group_translation</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">map_to_lti_group</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;tot 25&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Hoofdkostwinner: tot 25 jaar&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;25 tot 30&#39;</span> <span class="ow">in</span> <span class="n">label</span> <span class="ow">or</span> <span class="s1">&#39;30 tot 35&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Hoofdkostwinner: 25 tot 35 jaar&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;35 tot 40&#39;</span> <span class="ow">in</span> <span class="n">label</span> <span class="ow">or</span> <span class="s1">&#39;40 tot 45&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Hoofdkostwinner: 35 tot 45 jaar&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;45 tot&#39;</span> <span class="ow">in</span> <span class="n">label</span> <span class="ow">or</span> <span class="s1">&#39;50 tot&#39;</span> <span class="ow">in</span> <span class="n">label</span> <span class="ow">or</span> <span class="s1">&#39;60 tot&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Hoofdkostwinner: 45 tot 65 jaar&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;65 jaar of ouder&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Hoofdkostwinner: 65 jaar of ouder&#39;</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span>
-    <span class="n">viz_data</span><span class="p">,</span>
+<span class="n">inkomen_clean</span><span class="p">[</span><span class="s1">&#39;LTI Leeftijdsgroep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inkomen_clean</span><span class="p">[</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_to_lti_group</span><span class="p">)</span>
+<span class="n">inkomen_grouped</span> <span class="o">=</span> <span class="n">inkomen_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;LTI Leeftijdsgroep&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">lti_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">lti_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">lti_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">lti_df</span><span class="p">,</span> <span class="n">inkomen_grouped</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;LTI Leeftijdsgroep&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_midpoint</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;tot 25&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">22</span>
+    <span class="k">elif</span> <span class="s1">&#39;25 tot 35&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">30</span>
+    <span class="k">elif</span> <span class="s1">&#39;35 tot 45&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">40</span>
+    <span class="k">elif</span> <span class="s1">&#39;45 tot 65&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">55</span>
+    <span class="k">elif</span> <span class="s1">&#39;65 jaar of ouder&#39;</span> <span class="ow">in</span> <span class="n">label</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">70</span>
+
+<span class="n">lti_merged</span><span class="p">[</span><span class="s1">&#39;Leeftijd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lti_merged</span><span class="p">[</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_midpoint</span><span class="p">)</span>
+<span class="n">lti_merged</span><span class="p">[</span><span class="s1">&#39;Hypotheekschuld (€)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lti_merged</span><span class="p">[</span><span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">lti_merged</span><span class="p">[</span><span class="s1">&#39;LTI&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">lti_merged</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Leeftijd&#39;</span><span class="p">,</span>
-    <span class="n">z</span><span class="o">=</span><span class="s1">&#39;LTI&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Age Group EN&#39;</span><span class="p">,</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Age Group EN&#39;</span><span class="p">,</span>
-    <span class="n">size_max</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;3D Visualization of Gross Income, Age and Loan-to-Income (LTI) Ratio&#39;</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;Bruto Inkomen&#39;</span><span class="p">:</span> <span class="s1">&#39;Gross Income (€)&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Leeftijd&#39;</span><span class="p">:</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;LTI&#39;</span><span class="p">:</span> <span class="s1">&#39;LTI (Mortgage Debt / Income)&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Age Group EN&#39;</span><span class="p">:</span> <span class="s1">&#39;Age Group&#39;</span>
-    <span class="p">}</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LTI&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">&#39;Hypotheekschuld (€)&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Leeftijdsgroep&#39;</span><span class="p">,</span>
+    <span class="n">size_max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Bubble Chart: Bruto Inkomen vs. LTI per Leeftijdsgroep&#39;</span>
 <span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">),</span>
-    <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;top center&#39;</span><span class="p">,</span>
-    <span class="n">hovertemplate</span><span class="o">=</span><span class="p">(</span>
-        <span class="s2">&quot;&lt;b&gt;%</span><span class="si">{text}</span><span class="s2">&lt;/b&gt;&lt;br&gt;&lt;br&gt;&quot;</span>
-        <span class="s2">&quot;Gross Income: €%</span><span class="si">{x:,.0f}</span><span class="s2">&lt;br&gt;&quot;</span>
-        <span class="s2">&quot;Age: %</span><span class="si">{y}</span><span class="s2">&lt;br&gt;&quot;</span>
-        <span class="s2">&quot;LTI: %</span><span class="si">{z:.2f}</span><span class="s2">&quot;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;top center&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">scene</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Gross Income (€)&#39;</span><span class="p">,</span>
-        <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>
-        <span class="n">zaxis_title</span><span class="o">=</span><span class="s1">&#39;LTI (Mortgage Debt / Income)&#39;</span>
-    <span class="p">),</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Bruto Inkomen (€)&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Loan-to-Income (LTI)&#39;</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">template</span><span class="o">=</span><span class="s1">&#39;plotly_white&#39;</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -627,6 +655,72 @@ housing options. Alternative housing such as tiny houses might also be the new f
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># CSV&#39;s inladen</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">lti_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;LTI_per_Leeftijdsgroep.csv&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">inkomen_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;inkomen_huishoudens_per_leeftijd.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">inkomen_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">inkomen_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">inkomen_clean</span> <span class="o">=</span> <span class="n">inkomen_df</span><span class="p">[[</span><span class="s1">&#39;Overige kenmerken&#39;</span><span class="p">,</span> <span class="s1">&#39;Bruto-inkomen (1 000 euro)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nn">File ~/miniconda3/envs/ai-env/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/ai-env/lib/python3.13/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/miniconda3/envs/ai-env/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/ai-env/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/miniconda3/envs/ai-env/lib/python3.13/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;inkomen_huishoudens_per_leeftijd.csv&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -745,12 +839,36 @@ housing options. Alternative housing such as tiny houses might also be the new f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Mark\AppData\Local\Temp\ipykernel_13116\2660488042.py:9: FutureWarning:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4909/2660488042.py:9: FutureWarning:
 
 DataFrame.applymap has been deprecated. Use DataFrame.map instead.
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b535ade9b40249f5abad7e76ed765c55", "version_major": 2, "version_minor": 0}</script></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">33</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">merged_data</span><span class="p">[</span><span class="s1">&#39;Provincie&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_data</span><span class="p">[</span><span class="s1">&#39;Regio</span><span class="se">\&#39;</span><span class="s1">s&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; (PV)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">merged_data</span><span class="p">[</span><span class="s1">&#39;Ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_data</span><span class="p">[</span><span class="s1">&#39;House_price_growth&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged_data</span><span class="p">[</span><span class="s1">&#39;Income_growth&#39;</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">33</span> <span class="n">line_fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">line_fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Click on a province to see details&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">40</span>     <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="n">choropleth</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="n">merged_data</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">62</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/ai-env/lib/python3.13/site-packages/plotly/missing_anywidget.py:13,</span> in <span class="ni">FigureWidget.__init__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Please install anywidget to use the FigureWidget class&quot;</span><span class="p">)</span>
+
+<span class="ne">ImportError</span>: Please install anywidget to use the FigureWidget class
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="summary-of-the-first-perspective">
@@ -935,6 +1053,7 @@ Could not infer format, so each element will be parsed individually, falling bac
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/21f57c940f67a812d9adc32cef78e5e8edd33f1e7f31de2f703aa5b3a7ce7681.png" src="_images/21f57c940f67a812d9adc32cef78e5e8edd33f1e7f31de2f703aa5b3a7ce7681.png" />
 </div>
 </div>
 </section>
@@ -1052,14 +1171,16 @@ Could not infer format, so each element will be parsed individually, falling bac
 <li><p>Shearer, H., &amp; Burton, P. (2018). Towards a Typology of Tiny Houses. Housing Theory And Society, 36(3), 298–318. <a class="reference external" href="https://doi.org/10.1080/14036096.2018.148787">https://doi.org/10.1080/14036096.2018.148787</a></p></li>
 <li><p>E.M.J. Veerhoek. (2024). First-time buyers on the Dutch housing market – the starters dilemma. <a class="reference external" href="https://repository.tudelft.nl/record/uuid:ad545858-5b32-4f20-ad15-c44595d186b8">https://repository.tudelft.nl/record/uuid:ad545858-5b32-4f20-ad15-c44595d186b8</a></p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "Mark-Kuster-UvA/InfoVisA4",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1129,7 +1250,7 @@ Could not infer format, so each element will be parsed individually, falling bac
   <div class="footer-item">
     
 <p class="component-author">
-By Yen-Chia Hsu
+By Mark Kuster
 </p>
 
   </div>
