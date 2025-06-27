@@ -2,8 +2,11 @@ name: deploy-book
 
 on:
   push:
-    branches: [main]          # of 'master' als jouw hoofdbranch zo heet
-
+    branches: [gh-pages]          # of 'master' als jouw hoofdbranch zo heet
+    
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,3 +32,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html
+          publish_branch: gh-pages
+          user_name: github-actions
+          user_email: actions@github.com
