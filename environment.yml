@@ -1,0 +1,10 @@
+name: infovis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pandas
+  - plotly
+  - ipywidgets
+  - notebook
+  - jupyterlab
